@@ -15,6 +15,7 @@ public class MoveObject : MonoBehaviour
 
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
 
-        transform.position += move * speed * Time.deltaTime;
+        //transform.position += move * speed * Time.deltaTime;
+        transform.Translate(move * speed * Time.deltaTime);
     }
 }
