@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class MoveObject : MonoBehaviour
 {
+    // test
     public float speed = 5.0f; // move speed
 
     void Update()
