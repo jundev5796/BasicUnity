@@ -7,8 +7,14 @@ public class MoveObject : MonoBehaviour
 
     void Update()
     {
-        // move with key press
-        float move = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * move * speed * Time.deltaTime);
+        //// move with key press
+        //float move = Input.GetAxis("Horizontal");
+
+        //// direction * speed * time.deltatime
+        //transform.Translate(Vector3.right * move * speed * Time.deltaTime);
+
+        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
+
+        transform.position += move * speed * Time.deltaTime;
     }
 }
