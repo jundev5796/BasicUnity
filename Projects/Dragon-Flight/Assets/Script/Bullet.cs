@@ -36,6 +36,9 @@ public class Bullet : MonoBehaviour
             // 폭발 이펙트 생성
             Instantiate(explosion, transform.position, Quaternion.identity);
 
+            // 죽음사운드
+            SoundManager.instance.SoundDie(); // 적 죽음 사운드
+
             // 적지우기
             Destroy(collision.gameObject);
 

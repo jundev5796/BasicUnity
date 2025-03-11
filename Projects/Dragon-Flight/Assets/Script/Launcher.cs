@@ -16,6 +16,9 @@ public class Launcher : MonoBehaviour
     {
         // 미사일 프리팸, 런쳐포지션, 방향값 안줌
         Instantiate(bullet, transform.position, Quaternion.identity);
+
+        // 사운드 사용해보기 사운드매니져에서 총사운드 바로 실행함수 호출 싱글톤사용
+        SoundManager.instance.PlayBulletSound();
     }
 
 
