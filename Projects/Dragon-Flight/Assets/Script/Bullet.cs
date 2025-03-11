@@ -39,6 +39,9 @@ public class Bullet : MonoBehaviour
             // 죽음사운드
             SoundManager.instance.SoundDie(); // 적 죽음 사운드
 
+            // 점수올려주기
+            GameManager.instance.AddScore(10);
+
             // 적지우기
             Destroy(collision.gameObject);
 
