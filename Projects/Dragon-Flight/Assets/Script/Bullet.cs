@@ -48,5 +48,41 @@ public class Bullet : MonoBehaviour
             // 총알 지우기 자기자신
             Destroy(gameObject);
         }
+
+        if (collision.gameObject.CompareTag("Enemy_Normal"))
+        {
+            // 폭발 이펙트 생성
+            Instantiate(explosion, transform.position, Quaternion.identity);
+
+            // 죽음사운드
+            SoundManager.instance.SoundDie(); // 적 죽음 사운드
+
+            // 점수올려주기
+            GameManager.instance.AddScore(50);
+
+            // 적지우기
+            Destroy(collision.gameObject);
+
+            // 총알 지우기 자기자신
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Boss"))
+        {
+            // 폭발 이펙트 생성
+            Instantiate(explosion, transform.position, Quaternion.identity);
+
+            // 죽음사운드
+            SoundManager.instance.SoundDie(); // 적 죽음 사운드
+
+            // 점수올려주기
+            GameManager.instance.AddScore(50);
+
+            // 적지우기
+            Destroy(collision.gameObject);
+
+            // 총알 지우기 자기자신
+            Destroy(gameObject);
+        }
     }
 }
