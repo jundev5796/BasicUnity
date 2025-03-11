@@ -24,4 +24,19 @@ public class Bullet : MonoBehaviour
         //미사일 지우자
         Destroy(gameObject);
     }
+
+
+    // 2D충돌 트리거이벤트
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // 미사일과 적이 부딪혔다
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            // 적지우기
+            Destroy(collision.gameObject);
+
+            // 총알 지우기 자기자신
+            Destroy(gameObject);
+        }
+    }
 }
