@@ -3,6 +3,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float moveSpeed = 0.45f;
+    public GameObject explosion;
 
 
     void Start()
@@ -32,6 +33,9 @@ public class Bullet : MonoBehaviour
         // 미사일과 적이 부딪혔다
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            // 폭발 이펙트 생성
+            Instantiate(explosion, transform.position, Quaternion.identity);
+
             // 적지우기
             Destroy(collision.gameObject);
 
