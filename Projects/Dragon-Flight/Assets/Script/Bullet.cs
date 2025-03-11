@@ -4,6 +4,7 @@ public class Bullet : MonoBehaviour
 {
     public float moveSpeed = 0.45f;
     public GameObject explosion;
+    public float bossHP = 10;
 
 
     void Start()
@@ -58,7 +59,7 @@ public class Bullet : MonoBehaviour
             SoundManager.instance.SoundDie(); // 적 죽음 사운드
 
             // 점수올려주기
-            GameManager.instance.AddScore(50);
+            GameManager.instance.AddScore(30);
 
             // 적지우기
             Destroy(collision.gameObject);
@@ -69,19 +70,24 @@ public class Bullet : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Boss"))
         {
-            // 폭발 이펙트 생성
+            // Get the Boss component and reduce HP
+            Boss boss = collision.gameObject.GetComponent<Boss>();
+
+            if (boss != null)
+            {
+                boss.TakeDamage(1); // Reduce HP by 1
+            }
+
+            // Show explosion effect
             Instantiate(explosion, transform.position, Quaternion.identity);
 
-            // 죽음사운드
-            SoundManager.instance.SoundDie(); // 적 죽음 사운드
+            // Play sound effect
+            SoundManager.instance.SoundDie();
 
-            // 점수올려주기
-            GameManager.instance.AddScore(50);
+            //// Add score
+            //GameManager.instance.AddScore(100);
 
-            // 적지우기
-            Destroy(collision.gameObject);
-
-            // 총알 지우기 자기자신
+            // Destroy the bullet
             Destroy(gameObject);
         }
     }

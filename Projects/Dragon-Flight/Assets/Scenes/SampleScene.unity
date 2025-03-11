@@ -350,7 +350,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 4eaf0f0aa3e019944b55671280b6a6ba, type: 3}
   m_Resource: {fileID: 8300000, guid: 4eaf0f0aa3e019944b55671280b6a6ba, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.28
+  m_Volume: 0.18
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -569,6 +569,7 @@ MonoBehaviour:
   enemy_small: {fileID: 7816539707072358410, guid: 8daa9639be1ba344084b690ffbbfde21, type: 3}
   enemy_normal_01: {fileID: 3345020190115419545, guid: 99a7ec71082124644a0c718181ca6f00, type: 3}
   enemy_normal_02: {fileID: 4941305761901793746, guid: 8b8853db4e7f07d4ea9c1b6e38ece687, type: 3}
+  boss: {fileID: 6558060662224805166, guid: dfbd55f52c1b3954cb7a0ddf481624b5, type: 3}
 --- !u!4 &939738767
 Transform:
   m_ObjectHideFlags: 0

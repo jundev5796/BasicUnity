@@ -7,6 +7,9 @@ public class SpawnManager : MonoBehaviour
     public GameObject enemy_small;
     public GameObject enemy_normal_01;
     public GameObject enemy_normal_02;
+    public GameObject boss;
+
+    private bool bossSpawned = false;
 
     //적을 생성하는 함수
     void SpawnEnemy()
@@ -34,15 +37,25 @@ public class SpawnManager : MonoBehaviour
             Instantiate(enemy_normal_02, new Vector3(randomX2, transform.position.y, 0f), Quaternion.identity);
     }
 
+    void SpawnBoss()
+    {
+        if (!bossSpawned)
+        {
+            Instantiate(boss, new Vector3(0, transform.position.y, 0f), Quaternion.identity);
+            bossSpawned = true;
+        }
+    }
+
     void Start()
     {
         //SpawnEnemy  1  0.5f 
         InvokeRepeating("SpawnEnemy", 4, 0.5f);
         Invoke("CancelSpawn", 20f);
-        InvokeRepeating("SpawnEnemy2", 22, 0.5f);
-        Invoke("CancelSpawn2", 42f);
-        InvokeRepeating("SpawnEnemy3", 44, 0.5f);
-        Invoke("CancelSpawn3", 62f);
+        InvokeRepeating("SpawnEnemy2", 23, 0.5f);
+        Invoke("CancelSpawn2", 43f);
+        InvokeRepeating("SpawnEnemy3", 46, 0.5f);
+        Invoke("CancelSpawn3", 64f);
+        Invoke("SpawnBoss", 68f);
     }
 
 
