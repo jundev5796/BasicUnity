@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
-
+        Singleton.Instance.PrintMessage();
     }
 
 
