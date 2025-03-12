@@ -2,51 +2,51 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    //스피드
     public float moveSpeed = 5f;
-    private Animator anim;
 
-    //private Vector2 minBounds;
-    //private Vector2 maxBounds;
+    Animator ani; //애니메이터를 가져올 변수
 
     void Start()
     {
-        anim = GetComponent<Animator>();
-
-        //Camera cam = Camera.main;
-        //Vector3 bottomLeft = cam.ViewportToWorldPoint(new Vector3(0, 0, 0));
-        //Vector3 topRight = cam.ViewportToWorldPoint(new Vector3(1, 1, 0));
-
-        //minBounds = new Vector2(bottomLeft.x, bottomLeft.y);
-        //maxBounds = new Vector2(topRight.x, topRight.y);
+        ani = GetComponent<Animator>();
     }
 
+    
     void Update()
     {
+        //방향키에따른 움직임
         float moveX = moveSpeed * Time.deltaTime * Input.GetAxis("Horizontal");
         float moveY = moveSpeed * Time.deltaTime * Input.GetAxis("Vertical");
 
         // -1   0   1
         if (Input.GetAxis("Horizontal") <= -0.5f)
-            anim.SetBool("left", true);
+            ani.SetBool("left", true);
         else
-            anim.SetBool("left", false);
+            ani.SetBool("left", false);
+
 
         if (Input.GetAxis("Horizontal") >= 0.5f)
-            anim.SetBool("right", true);
+            ani.SetBool("right", true);
         else
-            anim.SetBool("right", false);
+            ani.SetBool("right", false);
 
-        if (Input.GetAxis("Vertical") >= 0.5f)
-            anim.SetBool("up", true);
+
+        if(Input.GetAxis("Vertical")>=0.5f)
+        {
+            ani.SetBool("up", true);
+        }
         else
-            anim.SetBool("up", false);
+        {
+            ani.SetBool("up", false);
+        }
 
-            //Vector3 newPosition = transform.position + new Vector3(moveX, moveY, 0);
 
-            //// 경계를 벗어나지 않도록 위치 제한
-            //newPosition.x = Mathf.Clamp(newPosition.x, minBounds.x, maxBounds.x);
-            //newPosition.y = Mathf.Clamp(newPosition.y, minBounds.y, maxBounds.y);
+
+
 
             transform.Translate(moveX, moveY, 0);
+
+
     }
 }

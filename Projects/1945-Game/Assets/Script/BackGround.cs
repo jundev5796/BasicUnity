@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BackGround : MonoBehaviour
 {
-    public float scrollspeed = 0.01f;
+    public float scrollSpeed = 0.01f;
     Material myMaterial;
 
     void Start()
@@ -10,12 +10,15 @@ public class BackGround : MonoBehaviour
         myMaterial = GetComponent<Renderer>().material;
     }
 
+    
     void Update()
     {
-        float newOffsetY = myMaterial.mainTextureOffset.y + scrollspeed * Time.deltaTime;
+        float newOffsetY = myMaterial.mainTextureOffset.y + scrollSpeed * Time.deltaTime;
 
         Vector2 newOffset = new Vector2(0, newOffsetY);
 
         myMaterial.mainTextureOffset = newOffset;
+
+
     }
 }
