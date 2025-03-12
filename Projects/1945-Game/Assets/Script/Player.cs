@@ -36,12 +36,17 @@ public class Player : MonoBehaviour
         else
             anim.SetBool("right", false);
 
-        //Vector3 newPosition = transform.position + new Vector3(moveX, moveY, 0);
+        if (Input.GetAxis("Vertical") >= 0.5f)
+            anim.SetBool("up", true);
+        else
+            anim.SetBool("up", false);
 
-        //// 경계를 벗어나지 않도록 위치 제한
-        //newPosition.x = Mathf.Clamp(newPosition.x, minBounds.x, maxBounds.x);
-        //newPosition.y = Mathf.Clamp(newPosition.y, minBounds.y, maxBounds.y);
+            //Vector3 newPosition = transform.position + new Vector3(moveX, moveY, 0);
 
-        transform.Translate(moveX, moveY, 0);
+            //// 경계를 벗어나지 않도록 위치 제한
+            //newPosition.x = Mathf.Clamp(newPosition.x, minBounds.x, maxBounds.x);
+            //newPosition.y = Mathf.Clamp(newPosition.y, minBounds.y, maxBounds.y);
+
+            transform.Translate(moveX, moveY, 0);
     }
 }
