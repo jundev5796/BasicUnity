@@ -1041,7 +1041,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  bullet: {fileID: 7680972964671015873, guid: c9f191939c029e24f9784fa1e55a0494, type: 3}
+  bullets:
+  - {fileID: 7680972964671015873, guid: c9f191939c029e24f9784fa1e55a0494, type: 3}
+  - {fileID: 1933276374592133674, guid: 2b6a2a79b9794bf47b81d0759c8bddb0, type: 3}
+  - {fileID: 8138511668301772134, guid: f941e638cd9774c4fbfee4ae6ba7ffca, type: 3}
+  - {fileID: 599380994758557636, guid: 6b2bc7dab29c2ec4082caf48d2fd1a0e, type: 3}
   pos: {fileID: 871797858}
 --- !u!61 &1092945858
 BoxCollider2D:
