@@ -5,6 +5,7 @@ public class Bullet : MonoBehaviour
     public float Speed = 4.0f;
     // 공격력
     // 이텍트
+    public GameObject effect;
 
     void Update()
     {
@@ -25,6 +26,11 @@ public class Bullet : MonoBehaviour
     {
         if (collision.CompareTag("Monster"))
         {
+            // 이펙트생성
+            GameObject go = Instantiate(effect, transform.position, Quaternion.identity);
+            // 1초뒤에 지우기
+            Destroy(go, 1);
+
             // 몬스터 삭제
             Destroy(collision.gameObject);
 

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3650370594923096928}
   - component: {fileID: 4928323242029729065}
   - component: {fileID: 7269296818692237862}
-  - component: {fileID: 6259999692201933298}
+  - component: {fileID: -9204746366912808264}
   m_Layer: 0
   m_Name: PBullet
   m_TagString: Untagged
@@ -163,7 +163,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.25, y: 0.8125}
   m_EdgeRadius: 0
---- !u!114 &6259999692201933298
+--- !u!114 &-9204746366912808264
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,3 +176,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 4
+  effect: {fileID: 4253839180891407448, guid: ffda715a9f27bbf459407657157391c9, type: 3}
