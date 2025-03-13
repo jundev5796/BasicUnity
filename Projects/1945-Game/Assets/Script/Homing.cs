@@ -26,4 +26,18 @@ public class Homing : MonoBehaviour
         //transform.position = Vector3.MoveTowards(transform.position
         //    , target.transform.position, Speed * Time.deltaTime);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
+
 }
