@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public int power = 0;
 
     // 아이템
+    [SerializeField] private GameObject powerUp; // private 인스펙터에서 사용하는방법
 
     // 레이저
 
@@ -78,7 +79,8 @@ public class Player : MonoBehaviour
             else
             {
                 // 파워업
-
+                GameObject go = Instantiate(powerUp, Vector3.zero, Quaternion.identity);
+                Destroy(go, 1);
             }
 
             // 아이템 먹은 처리

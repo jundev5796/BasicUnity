@@ -1048,6 +1048,7 @@ MonoBehaviour:
   - {fileID: 5727721454167696220, guid: 3cb8b5aba328625458e5bf903dd21685, type: 3}
   pos: {fileID: 871797858}
   power: 0
+  powerUp: {fileID: 6398892178221898842, guid: b00fa9ad61110774bbb8e17d4e6ef560, type: 3}
 --- !u!61 &1092945858
 BoxCollider2D:
   m_ObjectHideFlags: 0
