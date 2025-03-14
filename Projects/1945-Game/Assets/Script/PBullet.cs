@@ -37,5 +37,16 @@ public class Bullet : MonoBehaviour
             // 미사일 삭제
             Destroy(gameObject);
         }
+
+        if (collision.CompareTag("Boss"))
+        {
+            // 이펙트생성
+            GameObject go = Instantiate(effect, transform.position, Quaternion.identity);
+            // 1초뒤에 지우기
+            Destroy(go, 1);
+
+            // 미사일 삭제
+            Destroy(gameObject);
+        }
     }
 }

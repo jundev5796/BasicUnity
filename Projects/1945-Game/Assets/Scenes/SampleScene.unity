@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 124067592}
   m_Layer: 0
   m_Name: Boss_left_0
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -375,9 +375,10 @@ GameObject:
   - component: {fileID: 167329353}
   - component: {fileID: 167329356}
   - component: {fileID: 167329355}
+  - component: {fileID: 167329357}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -527,6 +528,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.16, y: 2.9177732}
   m_EdgeRadius: 0
+--- !u!114 &167329357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167329351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fdc0fe8c263b564f93d7cb381abfe9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mb: {fileID: 6329753095098232902, guid: 958889b71c8f8f74fa8cf65e998d6493, type: 3}
+  mb2: {fileID: 1881591036211308127, guid: 115dad2f1d8757d4d8385ead63f662c0, type: 3}
+  pos1: {fileID: 2022466617}
+  pos2: {fileID: 989937065}
 --- !u!1 &202692790
 GameObject:
   m_ObjectHideFlags: 0
@@ -1767,7 +1784,7 @@ GameObject:
   - component: {fileID: 1126514242}
   m_Layer: 0
   m_Name: Boss_right_0
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
