@@ -32,7 +32,7 @@ public class Bullet : MonoBehaviour
             Destroy(go, 1);
 
             // 몬스터 삭제
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<Monster>().Damage(1);
 
             // 미사일 삭제
             Destroy(gameObject);
