@@ -5,6 +5,9 @@ public class Player : MonoBehaviour
     public float moveSpeed = 5f;
     Animator anim;
 
+    public GameObject bullet;
+    public Transform pos;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -30,6 +33,8 @@ public class Player : MonoBehaviour
         else
             anim.SetBool("Up", false);
 
+        Shoot();
+
         transform.Translate(moveX, moveY, 0);
 
         Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
@@ -39,8 +44,9 @@ public class Player : MonoBehaviour
         transform.position = worldPos; //좌표를 적용한다.
     }
 
-    private void OnBecameInvisible()
+    private void Shoot()
     {
-        Destroy(gameObject);
+        if (Input.GetKeyDown(KeyCode.Space))
+            Instantiate(bullet, pos.position, Quaternion.identity);
     }
 }
