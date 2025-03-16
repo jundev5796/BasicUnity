@@ -32,4 +32,18 @@ public class Monster : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    public void Damage(int attack)
+    {
+        ItemDrop();
+        Destroy(gameObject);
+    }
+
+
+
+    public void ItemDrop()
+    {
+        // 아이템 생성
+        Instantiate(Item, transform.position, Quaternion.identity);
+    }
 }

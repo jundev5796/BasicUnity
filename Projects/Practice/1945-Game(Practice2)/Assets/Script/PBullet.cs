@@ -3,7 +3,7 @@ using UnityEngine;
 public class PBullet : MonoBehaviour
 {
     public float Speed = 4.0f;
-    //public int Attack = 10;
+    public int Attack = 10;
     public GameObject effect;
 
     void Update()
@@ -26,8 +26,7 @@ public class PBullet : MonoBehaviour
             Destroy(go, 1);
 
             // 몬스터 삭제
-            Destroy(collision.gameObject);
-            //collision.gameObject.GetComponent<Monster>().Damage(1);
+            collision.gameObject.GetComponent<Monster>().Damage(1);
 
             // 미사일 삭제
             Destroy(gameObject);
