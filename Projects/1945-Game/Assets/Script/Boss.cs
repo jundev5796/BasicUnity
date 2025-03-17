@@ -80,13 +80,7 @@ public class Boss : MonoBehaviour
             yield return new WaitForSeconds(attackRate);
 
         }
-
-
-
-
     }
-
-
 
     private void Update()
     {
