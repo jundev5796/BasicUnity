@@ -5,6 +5,9 @@ public class Player : MonoBehaviour
     public float moveSpeed = 5f;
     Animator anim;
 
+    public GameObject bullet;
+    public Transform pos;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -30,6 +33,16 @@ public class Player : MonoBehaviour
         else
             anim.SetBool("Up", false);
 
+        if (Input.GetKeyDown(KeyCode.Space))
+            Instantiate(bullet, pos.position, Quaternion.identity);
+
         transform.Translate(moveX, moveY, 0);
+
+        //캐릭터의 월드 좌표를 뷰포트 좌표계로 변환해준다.
+        Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
+        viewPos.x = Mathf.Clamp01(viewPos.x); //x값을 0이상, 1이하로 제한한다.
+        viewPos.y = Mathf.Clamp01(viewPos.y); //y값을 0이상, 1이하로 제한한다.
+        Vector3 worldPos = Camera.main.ViewportToWorldPoint(viewPos);//다시월드좌표로 변환
+        transform.position = worldPos; //좌표를 적용한다.
     }
 }
