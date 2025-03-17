@@ -36,6 +36,7 @@ public class Bullet : MonoBehaviour
 
             // 몬스터 삭제
             collision.gameObject.GetComponent<Monster>().Damage(Attack);
+            //PoolManager.Instance.Return(collision.gameObject);
 
             // 미사일 삭제
             Destroy(gameObject);

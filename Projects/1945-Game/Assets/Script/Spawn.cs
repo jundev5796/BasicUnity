@@ -19,6 +19,8 @@ public class Spawn : MonoBehaviour
     private void Awake()
     {
         textBossWarning.SetActive(false);
+
+        PoolManager.Instance.CreatePool(monster, 10);
     }
 
     void Start()
@@ -40,8 +42,11 @@ public class Spawn : MonoBehaviour
             Vector2 r = new Vector2(x, transform.position.y);
             //몬스터 생성
             Instantiate(monster, r, Quaternion.identity);
+            //GameObject enemy = PoolManager.Instance.Get(monster);
+            //enemy.transform.position = r;
         }
     }
+
     //코루틴으로 랜덤하게 생성하기
     IEnumerator RandomSpawn2()
     {
@@ -57,6 +62,7 @@ public class Spawn : MonoBehaviour
             Instantiate(monster2, r, Quaternion.identity);
         }
     }
+
     void Stop()
     {
         swi = false;
