@@ -14,6 +14,13 @@ public class Spawn : MonoBehaviour
     bool swi = true;
     bool swi2 = true;
 
+    [SerializeField] GameObject textBossWarning;
+
+    private void Awake()
+    {
+        textBossWarning.SetActive(false);
+    }
+
     void Start()
     {
         StartCoroutine("RandomSpawn");
@@ -66,6 +73,7 @@ public class Spawn : MonoBehaviour
     {
         swi2 = false;
         StopCoroutine("RandomSpawn2");
+        textBossWarning.SetActive(true);
 
         //º¸½º
         Vector2 pos = new Vector2(0, 2.97f);
