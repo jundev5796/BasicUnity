@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject powerUp; // private 인스펙터에서 사용하는방법
 
     // 레이저
+    public GameObject laser;
+    public float gValue = 0;
 
     void Start()
     {
@@ -58,7 +60,29 @@ public class Player : MonoBehaviour
             Instantiate(bullet[power], pos.position, Quaternion.identity);
         }
 
-        transform.Translate(moveX, moveY, 0);
+        else if (Input.GetKey(KeyCode.Space))
+        {
+            gValue += Time.deltaTime;
+            
+            if (gValue >= 1)
+            {
+                GameObject go = Instantiate(laser, pos.position, Quaternion.identity);
+                Destroy(go, 3);
+                gValue = 0;
+            }
+        }
+
+        else
+        {
+            gValue -= Time.deltaTime;
+
+            if (gValue <= 0)
+            {
+                gValue = 0;
+            }
+        }
+
+            transform.Translate(moveX, moveY, 0);
 
         //캐릭터의 월드 좌표를 뷰포트 좌표계로 변환해준다.
         Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
