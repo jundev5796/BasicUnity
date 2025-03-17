@@ -9,7 +9,7 @@ public class Spawn : MonoBehaviour
     public float SpawnStop = 10; //스폰끝나는시간
     public GameObject monster;
     public GameObject monster2;
-
+    public GameObject Boss;
 
     bool swi = true;
     bool swi2 = true;
@@ -66,7 +66,9 @@ public class Spawn : MonoBehaviour
     {
         swi2 = false;
         StopCoroutine("RandomSpawn2");
-        //보스
 
+        //보스
+        Vector2 pos = new Vector2(0, 2.97f);
+        Instantiate(Boss, pos, Quaternion.identity);
     }
 }
