@@ -1,4 +1,8 @@
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
 
 public class Player : MonoBehaviour
 {
@@ -18,6 +22,8 @@ public class Player : MonoBehaviour
     // ·¹ÀÌÀú
     public GameObject laser;
     public float gValue = 0;
+
+    public Image Gauge;
 
     void Start()
     {
@@ -63,6 +69,7 @@ public class Player : MonoBehaviour
         else if (Input.GetKey(KeyCode.Space))
         {
             gValue += Time.deltaTime;
+            Gauge.fillAmount = gValue;
             
             if (gValue >= 1)
             {
@@ -80,6 +87,8 @@ public class Player : MonoBehaviour
             {
                 gValue = 0;
             }
+
+            Gauge.fillAmount = gValue;
         }
 
             transform.Translate(moveX, moveY, 0);
