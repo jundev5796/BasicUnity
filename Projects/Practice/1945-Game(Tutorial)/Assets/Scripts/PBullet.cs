@@ -21,4 +21,14 @@ public class PBullet : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Monster"))
+        {
+            Destroy(collision.gameObject);
+
+            Destroy(gameObject);
+        }
+    }
 }
