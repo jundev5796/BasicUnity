@@ -9,9 +9,13 @@ public class CameraShake : MonoBehaviour
 
     void Awake()
     {
-        instance = this;
-        // 게임 오브젝트에 부착된 Impulse Source 컴포넌트 가져오기
-        impulseSource = GetComponent<CinemachineImpulseSource>();
+        CameraShake.instance.SetImpulseSource(gameObject.GetComponent<CinemachineImpulseSource>());
+        CameraShake.instance.cameraShakeShow();
+    }
+
+    public void SetImpulseSource(CinemachineImpulseSource source)
+    {
+        impulseSource = source;
     }
 
     // 카메라쉐이크 동작

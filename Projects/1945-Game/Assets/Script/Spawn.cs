@@ -89,11 +89,12 @@ public class Spawn : MonoBehaviour
 
     IEnumerator Shake()
     {
-        yield return new WaitForSeconds(0.2f);
-        CameraShake.instance.cameraShakeShow();
-        yield return new WaitForSeconds(0.2f);
-        CameraShake.instance.cameraShakeShow();
-        yield return new WaitForSeconds(0.2f);
-        CameraShake.instance.cameraShakeShow();
+        int shakeCnt = 15;
+        while (shakeCnt > 0)
+        {
+            CameraShake.instance.cameraShakeShow();
+            yield return new WaitForSeconds(0.1f);
+            shakeCnt--;
+        }
     }
 }
