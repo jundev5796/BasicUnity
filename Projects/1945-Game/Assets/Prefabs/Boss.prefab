@@ -412,6 +412,8 @@ GameObject:
   - component: {fileID: 7517504063029882929}
   - component: {fileID: 2025215720743369333}
   - component: {fileID: 4073086416706555805}
+  - component: {fileID: 6160140159578419173}
+  - component: {fileID: 4141449144909502394}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Boss
@@ -580,6 +582,71 @@ MonoBehaviour:
   mb2: {fileID: 1881591036211308127, guid: 115dad2f1d8757d4d8385ead63f662c0, type: 3}
   pos1: {fileID: 2476543351908897375}
   pos2: {fileID: 3880808085884173034}
+--- !u!114 &6160140159578419173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4875811763916311974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ImpulseDefinition:
+    ImpulseChannel: 1
+    ImpulseShape: 2
+    CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    ImpulseDuration: 0.2
+    ImpulseType: 0
+    DissipationRate: 0.25
+    RawSignal: {fileID: 0}
+    AmplitudeGain: 1
+    FrequencyGain: 1
+    RepeatMode: 0
+    Randomize: 1
+    TimeEnvelope:
+      AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      AttackTime: 0
+      SustainTime: 0.2
+      DecayTime: 0.7
+      ScaleWithImpact: 1
+      HoldForever: 0
+    ImpactRadius: 100
+    DirectionMode: 0
+    DissipationMode: 2
+    DissipationDistance: 100
+    PropagationSpeed: 343
+  DefaultVelocity: {x: 0.01, y: 0.01, z: 0}
+--- !u!114 &4141449144909502394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4875811763916311974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d058bdc1460133d439c88e84ac5ff761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5236479555892005864
 GameObject:
   m_ObjectHideFlags: 0

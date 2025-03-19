@@ -18,7 +18,6 @@ public class Boss : MonoBehaviour
         Invoke("Hide", 2); // 2ÃÊµÚ¿¡ º¸½º¿ö´× ²¨Áà
         StartCoroutine(BossMissle());
         StartCoroutine(CircleFire());
-
     }
 
     void Hide()
