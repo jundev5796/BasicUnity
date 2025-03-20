@@ -45,4 +45,12 @@ public class Player : MonoBehaviour
         Vector3 worldPos = Camera.main.ViewportToWorldPoint(viewPos);//다시월드좌표로 변환
         transform.position = worldPos; //좌표를 적용한다.
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Item"))
+        {
+            Destroy(collision.gameObject);
+        }
+    }
 }
