@@ -4,7 +4,7 @@ public class PBullet : MonoBehaviour
 {
     public float bulletSpeed = 4.0f;
     public int Attack = 10;
-    //public GameObject effect;
+    public GameObject effect;
 
 
     void Start()
@@ -27,6 +27,9 @@ public class PBullet : MonoBehaviour
         if (collision.CompareTag("Monster"))
         {
             collision.gameObject.GetComponent<Monster>().Damage(Attack);
+
+            GameObject go = Instantiate(effect, transform.position, Quaternion.identity);
+            Destroy(go, 1);
 
             Destroy(gameObject);
         }
