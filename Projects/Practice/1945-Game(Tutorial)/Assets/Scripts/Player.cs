@@ -5,8 +5,10 @@ public class Player : MonoBehaviour
     public float moveSpeed = 5f;
     Animator anim;
 
-    public GameObject bullet;
+    public GameObject[] bullet;
     public Transform pos;
+
+    public int power = 0;
 
     void Start()
     {
@@ -34,7 +36,7 @@ public class Player : MonoBehaviour
             anim.SetBool("Up", false);
 
         if (Input.GetKeyDown(KeyCode.Space))
-            Instantiate(bullet, pos.position, Quaternion.identity);
+            Instantiate(bullet[power], pos.position, Quaternion.identity);
 
         transform.Translate(moveX, moveY, 0);
 
@@ -50,6 +52,11 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("Item"))
         {
+            power += 1;
+
+            if (power >= 3)
+                power = 3;
+
             Destroy(collision.gameObject);
         }
     }
