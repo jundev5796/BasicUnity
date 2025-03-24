@@ -2,15 +2,29 @@ using UnityEngine;
 
 public class Homing : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public GameObject target;
+    public float Speed = 3f;
+    Vector2 dir;
+    Vector2 dirNo;
+
     void Start()
     {
-        
+        target = GameObject.FindGameObjectWithTag("Player");
+
+        dir = target.transform.position - transform.position;
+
+        dirNo = dir.normalized;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(dirNo * Speed * Time.deltaTime);
+
+        //transform.position = Vector3.MoveTowards(transform.position, target.transform.position, Speed * Time.deltaTime);
+    }
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }
